@@ -1,3 +1,5 @@
+import SpinLoading from "../components/spinLoading/SpinLoading";
+
 export default function Home() {
-  return <h1>Olá mundo</h1>;
+  return <SpinLoading classD="h-screen" />;
 }
