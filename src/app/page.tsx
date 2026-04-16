@@ -5,6 +5,7 @@ import Container from "../components/container/Container";
 import Header from "../components/Header/Header";
 import PostHeading from "../components/PostHeading/PostHeading";
 import PostImageCover from "../components/PostImageCover/PostImageCover";
+import PostList from "../components/PostList/PostList";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <PostList></PostList>
       <Suspense fallback={<SpinLoading />}></Suspense>
       <footer>
         <p>rodapé</p>
