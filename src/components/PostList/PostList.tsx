@@ -5,6 +5,7 @@ import api from "@/src/service/api";
 import { PostModels } from "@/src/models/posts/post-models";
 import PostImageCover from "../PostImageCover/PostImageCover";
 import PostHeading from "../PostHeading/PostHeading";
+import { formatRelativeDate, fulldateTime } from "@/src/utils/post-dateTime";
 export default function PostList() {
   const [posts, setPosts] = useState<PostModels[]>([]);
 
@@ -40,8 +41,9 @@ export default function PostList() {
                 <time
                   className="text-slate-600 block text-sm/tight"
                   dateTime={post.createdAt}
+                  title={formatRelativeDate(post.createdAt)}
                 >
-                  {post.createdAt}
+                  {fulldateTime(post.createdAt)}
                 </time>
 
                 <PostHeading as="h2" url="#">
