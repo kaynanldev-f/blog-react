@@ -1,21 +1,19 @@
 import { Suspense } from "react";
 
 import SpinLoading from "../components/spinLoading/SpinLoading";
-import Container from "../components/container/Container";
-import Header from "../components/Header/Header";
 
 import PostList from "../components/PostList/PostList";
+import PostFeatured from "../components/PostFeatured/PostFeatured";
 
 export default function Home() {
   return (
-    <Container>
-      <Header />
-
-      <PostList></PostList>
-      <Suspense fallback={<SpinLoading />}></Suspense>
-      <footer>
-        <p>rodapé</p>
-      </footer>
-    </Container>
+    <>
+      <Suspense fallback={<SpinLoading />}>
+        <PostFeatured></PostFeatured>
+      </Suspense>
+      <Suspense fallback={<SpinLoading />}>
+        <PostList></PostList>
+      </Suspense>
+    </>
   );
 }
