@@ -30,7 +30,7 @@ export default function PostList() {
           return (
             <div className="flex flex-col gap-4 group" key={post.id}>
               <PostImageCover
-                href={`/post/${post.slug}`}
+                href={`/posts/${post.slug}`}
                 w={1280}
                 h={720}
                 src={post.coverImageUrl}
