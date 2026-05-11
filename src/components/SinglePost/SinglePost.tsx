@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import PostDate from "../PostDate/PostDate";
 import PostHeading from "../PostHeading/PostHeading";
+import GenerateMarkdowm from "../GenerateMarkdown/GenerateMarkdowm";
 interface SingleSlugProp {
   slug: string;
 }
@@ -26,12 +27,13 @@ export default async function SinglePost({ slug }: SingleSlugProp) {
       <PostHeading as="h2" url="#">
         {post.title}
       </PostHeading>
-      <p className="flex items-center gap-1 mt-2">
+      <p className="flex items-center gap-1 mt-2 mb-10">
         {post.author} |
         <span>
           <PostDate date={post.createdAt} />
         </span>
       </p>
+      <GenerateMarkdowm content={post.content} />
     </>
   );
 }
